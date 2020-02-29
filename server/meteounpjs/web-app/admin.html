@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/web-app/">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- More examples at http://codemirror.net/demo/ -->
+
+    <!-- add basic CodeMirror functionality -->
+    <script src="lib/codemirror.js" type="text/javascript" charset="utf-8"></script>
+    <script src="hint/show-hint.js"></script>
+    <script src="hint/javascript-hint.js"></script>
+
+    <link rel="stylesheet" href="lib/codemirror.css" />
+
+    <!-- add Javascript-mode dependencies -->
+    <script src="mode/javascript/javascript.js" type="text/javascript" charset="utf-8"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui-timepicker-addon.min.css" />
+    <link rel="stylesheet" href="css/meteo-uniparthenope.css" />
+    <link rel="stylesheet" href="css/Control.Loading.css" />
+    <link rel="stylesheet" href="https://webapiv2.navionics.com/dist/webapi/webapi.min.css">
+
+    <!-- cookiealert styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css">
+    <link rel="stylesheet" href='css/social.css'>
+    <link rel="stylesheet" href='css/admin.css'>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html"><img src="images/meteo_uniparthenope_logo.png" WIDTH="200px" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto" id="navbar_items">
+            </ul>
+
+            <!--             <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
+
+
+        </div>
+
+        <div id="socialHolder" class="col-md-3">
+            <div id="socialShare" class="btn-group share-group">
+                <a data-toggle="dropdown" class="btn btn-info">
+                    <i class="fa fa-share-alt fa-inverse"></i>
+                </a>
+                <button href="#" data-toggle="dropdown" class="btn btn-info dropdown-toggle share">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a id="urlShareTwitter" target="_new" data-original-title="Twitter" rel="tooltip"
+                            href="https://twitter.com/share" class="btn btn-twitter" data-placement="left"
+                            data-url="http://example.com">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="urlShareFacebook" target="_new" data-original-title="Facebook" rel="tooltip"
+                            class="btn btn-facebook" data-placement="left">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+
+    <!--     <div id="editor-container">
+
+        <h5>CODE editor</h5>
+        <div id="editor1-pane">
+            <div id="editor1"></div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            window.codemirror1 = CodeMirror($('#editor1').get(0), {
+                value: '',
+                extraKeys: {"Ctrl-Space": "autocomplete"},
+                mode: "javascript",
+                readOnly: false,
+                styleActiveLine: true,
+                lineNumbers: true,
+                theme: 'abcdef',
+                electricChars: true,
+                spellcheck: true,
+            });
+        });
+            
+    </script> -->
+    <article>
+        <div class="row">
+            <div class="form-container">
+                <form>
+                    <div class="form-group">
+                        <label for="fileName">File Name</label>
+                        <input type="text" class="form-control" id="fileName" aria-describedby="fineNameHelp"
+                            placeholder="Enter file name">
+                        <small id="fineNameHelp" class="form-text text-muted">Include file extension ('.txt',
+                            '.js'...).</small>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row" id="editor-container">
+            <div class="col" id="editor1-pane">
+                <div id="editor1">
+                    <textarea id="code" name="code">
+        // Demo code (the actual new parser character stream implementation)
+        
+        function StringStream(string) {
+          this.pos = 0;
+          this.string = string;
+        }
+        
+        StringStream.prototype = {
+          done: function() {return this.pos >= this.string.length;},
+          peek: function() {return this.string.charAt(this.pos);},
+          next: function() {
+            if (this.pos &lt; this.string.length)
+              return this.string.charAt(this.pos++);
+          },
+          eat: function(match) {
+            var ch = this.string.charAt(this.pos);
+            if (typeof match == "string") var ok = ch == match;
+            else var ok = ch &amp;&amp; match.test ? match.test(ch) : match(ch);
+            if (ok) {this.pos++; return ch;}
+          },
+          eatWhile: function(match) {
+            var start = this.pos;
+            while (this.eat(match));
+            if (this.pos > start) return this.string.slice(start, this.pos);
+          },
+          backUp: function(n) {this.pos -= n;},
+          column: function() {return this.pos;},
+          eatSpace: function() {
+            var start = this.pos;
+            while (/\s/.test(this.string.charAt(this.pos))) this.pos++;
+            return this.pos - start;
+          },
+          match: function(pattern, consume, caseInsensitive) {
+            if (typeof pattern == "string") {
+              function cased(str) {return caseInsensitive ? str.toLowerCase() : str;}
+              if (cased(this.string).indexOf(cased(pattern), this.pos) == this.pos) {
+                if (consume !== false) this.pos += str.length;
+                return true;
+              }
+            }
+            else {
+              var match = this.string.slice(this.pos).match(pattern);
+              if (match &amp;&amp; consume !== false) this.pos += match[0].length;
+              return match;
+            }
+          }
+        };
+    </textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="btn-container">
+                <button class="btn btn-admin" type="button" value="save" id="save">Save</button>
+                <button class="btn btn-admin" type="button" value="load" id="load">Upload</button>
+            </div>
+        </div>
+    </article>
+
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+            lineNumbers: true,
+            matchBrackets: true,
+            continueComments: "Enter",
+            extraKeys: { "Ctrl-Q": "toggleComment", "Ctrl-Space": "autocomplete" },
+            mode: { name: "javascript", globalVars: true },
+            theme: 'abcdef',
+        });
+    </script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="js/jquery-ui-sliderAccess.js"></script>
+<script src="js/jquery-ui-timepicker-addon.min.js"></script>
+<!-- <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+
+<script src="js/leaflet.groupedlayercontrol.js"></script>
+
+<script src="js/leaflet-velocity.min.js"></script> -->
+<!-- <script src="js/spin.js"></script>
+<script src="js/Control.Loading.js"></script> -->
+<!-- <script src="js/leaflet.pm.min.js"></script> -->
+
+<!-- https://github.com/mevdschee/php-crud-api/tree/master/examples/clients/leaflet -->
+<!-- <script src="js/geojson-layer.js"></script>
+<script src="js/geojson-tile-layer.js"></script> -->
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript" src="https://webapiv2.navionics.com/dist/webapi/webapi.min.no-dep.js"></script>
+
+<!-- Include cookiealert script -->
+<script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
+
+<script src="js/social.js"></script>
+
+<!-- Protect jQuery variable. -->
+
+<script>
+    let jQueryProtect = jQuery;
+</script>
+
+
+<!-- <script src="js/meteo-uniparthenope.js"></script> -->
+<script src="app.js"></script>
+</body>
+
+</html>

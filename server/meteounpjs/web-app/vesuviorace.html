@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meteo Uniparthenope</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <link rel="stylesheet" href="css/jquery-ui-timepicker-addon.min.css"/>
+    <link rel="stylesheet" href="css/meteo-uniparthenope.css"/>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/jquery-ui-sliderAccess.js"></script>
+    <script src="js/jquery-ui-timepicker-addon.min.js"></script>
+    <script src="js/canvasjs.min.js"></script>
+    <script>
+        let jQueryProtect = jQuery;
+    </script>
+    <script src="js/meteo-uniparthenope.js"></script>
+    <style>
+        .ui-autocomplete-loading {
+            background: white url("images/ui-anim_basic_16x16.gif") right center no-repeat;
+        }
+    </style>
+</head>
+<!--
+Dependencies:
+https://github.com/trentrichardson/jQuery-Timepicker-Addon
+-->
+<body>
+<a href="vesuviorace.html?place=ca001&date=20190330Z1000&output=wn1&hours=48">[Golfo di Napoli]</a>
+<a href="vesuviorace.html?place=ca009&date=20190330Z1000&output=wn1&hours=48">[Partenza]</a>
+<a href="vesuviorace.html?place=ca004&date=20190330Z1200&output=wn1&hours=48">[Baia di Napoli]</a>
+<a href="vesuviorace.html?place=ca008&date=20190330Z1200&output=wn1&hours=48">[Golfo di Pozzuoli]</a>
+<a href="vesuviorace.html?place=ca007&date=20190330Z1400&output=wn1&hours=48">[Ischia e Procida]</a>
+<a href="vesuviorace.html?place=ca013&date=20190330Z1800&output=wn1&hours=48">[Capri]</a>
+<a href="vesuviorace.html?place=ca011&date=20190330Z2100&output=wn1&hours=48">[Sorrento]</a>
+<br/>
+<a href="https://meteo.uniparthenope.it/show/concerto/page3.html?baseMapIdx=1&date=20190330Z1000&place=ca001" target="_blank">[Golfo di Napoli]</a>
+<a href="https://meteo.uniparthenope.it/show/concerto/page3.html?baseMapIdx=1&date=20190330Z1000&place=ca009" target="_blank">[Partenza]</a>
+<a href="https://meteo.uniparthenope.it/show/concerto/page3.html?baseMapIdx=1&date=20190330Z1200&place=ca004" target="_blank">[Baia di Napoli]</a>
+<a href="https://meteo.uniparthenope.it/show/concerto/page3.html?baseMapIdx=1&date=20190330Z1200&place=ca008" target="_blank">[Golfo di Pozzuoli]</a>
+<a href="https://meteo.uniparthenope.it/show/concerto/page3.html?baseMapIdx=1&date=20190330Z1400&place=ca007" target="_blank">[Ischia e Procida]</a>
+<a href="https://meteo.uniparthenope.it/show/concerto/page3.html?baseMapIdx=1&date=20190330Z1800&place=ca013" target="_blank">[Capri]</a>
+<a href="https://meteo.uniparthenope.it/show/concerto/page3.html?baseMapIdx=1&date=20190330Z2100&place=ca011" target="_blank">[Sorrento]</a>
+
+<table>
+    <tr>
+        <td colspan="2"><div id="control"></div></td>
+    </tr>
+    <tr>
+        <td valign="top">
+            <div id="chart" ></div>
+
+        </td>
+        <td>
+            <table>
+
+                <tr>
+                    <td width="64px" align="right"><img id="leftBarImage" width="64px"/></td>
+                    <td><div id="plot"></div></td>
+                    <td width="64px" align="left"><img id="rightBarImage" width="64px"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><img id="bottomBarImage"/></td>
+                    <td></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<script >
+
+    var control=null;
+    var chart=null;
+    var plot=null;
+
+
+    function getURLParameter(sParam, defaultValue) {
+
+        var sPageURL = window.location.search.substring(1);
+
+        var sURLVariables = sPageURL.split('&');
+
+        for (var i = 0; i < sURLVariables.length; i++) {
+            var sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] == sParam) {
+                return sParameterName[1];
+            }
+        }
+        return defaultValue;
+    }
+
+    $( document ).ready(function() {
+        console.log("ready!");
+
+        var _prod=getURLParameter("prod","wrf5");
+        var _place=getURLParameter("place","com63049");
+        var _output=getURLParameter("output","gen");
+        var _hours=parseInt(getURLParameter("hours","0"));
+        var _step=parseInt(getURLParameter("step","1"));
+        var _ncepDate=getURLParameter("date",null);
+
+        console.log("date:"+_ncepDate)
+        console.log("prod:"+_prod)
+        console.log("output:"+_output)
+
+        chart=$("#chart").MeteoUniparthenopeChart(_place,_prod,_output,_hours,_step);
+        plot=$("#plot").MeteoUniparthenopePlot(_place,_prod,_output,_ncepDate,
+            "topBarImage",
+            "leftBarImage",
+            "rightBarImage",
+            "bottomBarImage");
+        control=$("#control").MeteoUniparthenopeControl(_place,_prod,_output,_ncepDate);
+        control.on( "update", function( event, place, prod, output, ncepDate ) {
+            console.log( place );
+            console.log( prod );
+            console.log( output );
+            console.log( ncepDate );
+
+            plot.update(place,prod,output,ncepDate);
+            if (place !== _place) {
+                chart=$("#chart").MeteoUniparthenopeChart(place,prod,output,_hours,_step);
+            }
+            else if (prod!==_prod || output !== _output) {
+                chart=$("#chart").MeteoUniparthenopeChart(place,prod,output,_hours,_step);
+            }
+
+            _prod=prod;
+            _place=place;
+            _output=output;
+            _ncepDate=ncepDate;
+        });
+
+    });
+
+</script>
+
+</body>
+</html>

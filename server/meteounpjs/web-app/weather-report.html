@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>meteo@uniparthenope - Weather Report</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <link rel="stylesheet" href="css/jquery-ui-timepicker-addon.min.css"/>
+    <link rel="stylesheet" href="css/meteo-uniparthenope.css"/>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/jquery-ui-sliderAccess.js"></script>
+    <script src="js/jquery-ui-timepicker-addon.min.js"></script>
+    <script src="js/canvasjs.min.js"></script>
+    <script>
+        let jQueryProtect = jQuery;
+    </script>
+    <script src="js/meteo-uniparthenope.js"></script>
+    <style>
+        .ui-autocomplete-loading {
+            background: white url("images/ui-anim_basic_16x16.gif") right center no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="images/meteo-uniparthenope-logo-short.png" />
+    </div>
+    <div id="qr-code"></div>
+    <div id="title"></div>
+    <div>
+        <div id="chartTsp" style="height: 10cm"></div>
+    </div>
+    <hr/>
+    <div>
+        <div id="chartCrh" style="height: 10cm"></div>
+    </div>
+    <hr/>
+    <div>
+        <div id="chartWn1" style="height: 10cm"></div>
+    </div>
+
+
+    <div id="wrf5-wn1">
+        <h2>Wind speed and direction at 10m</h2>
+    </div>
+
+    <div id="wrf5-wn2">
+        <h2>Wind shift at 10m</h2>
+    </div>
+
+    <h2>Surface current</h2>
+    <div id="rms3-gen"></div>
+    <script>
+
+
+
+        function getURLParameter(sParam, defaultValue) {
+
+            let sPageURL = window.location.search.substring(1);
+
+            let sURLVariables = sPageURL.split('&');
+
+            for (let i = 0; i < sURLVariables.length; i++) {
+                let sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] == sParam) {
+                    return sParameterName[1];
+                }
+            }
+            return defaultValue;
+        }
+
+        function pad(n, width, z) {
+            z = z || '0';
+            n = n + '';
+            return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+        }
+
+        let map=null;
+
+        let _place=getURLParameter("place","ca001");
+        let _ncepDate=getURLParameter("date",null);
+        if (_ncepDate==null) {
+
+            let dateTime = new Date();
+            _ncepDate = dateTime.getFullYear() + pad(dateTime.getMonth() + 1, 2) + pad(dateTime.getDate(), 2) + "Z" + "00" + "00";
+
+        }
+
+        let chartTsp=null;
+        let chartCrh=null;
+        let chartWn1=null;
+
+        jQueryProtect( document ).ready(function() {
+
+            jQueryProtect("#qr-code").append(
+                '<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://meteo.uniparthenope.it?place='+_place+'">'
+            );
+
+            chartTsp=jQueryProtect("#chartTsp").MeteoUniparthenopeChart(_place,"wrf5","tsp",24,1,_ncepDate,jQueryProtect("#title"));
+            chartCrh=jQueryProtect("#chartCrh").MeteoUniparthenopeChart(_place,"wrf5","crh",24,1,_ncepDate);
+            chartWn1=jQueryProtect("#chartWn1").MeteoUniparthenopeChart(_place,"wrf5","wn1",24,1,_ncepDate);
+
+            let ncepDateBase=_ncepDate.split("Z")[0];
+
+            let startHour=9;
+            let endHour=15;
+
+            for (let hour=startHour;hour<=endHour;hour++) {
+                let ncepDate=ncepDateBase+"Z"+ pad(hour, 2)+"00";
+                console.log(ncepDate);
+                jQueryProtect("#wrf5-wn1").append(
+                '<table>'+
+                    '<tr>'+
+                    '   <td></td>'+
+                        '<td>'+
+                            '<img height="64px" id="'+ncepDate+'-topBarImage-wrf5-wn1"/></td>'+
+                        '<td></td>'+
+                    '</tr>'+
+                    '<tr>'+
+                        '<td width="64px" align="right"><img id="'+ncepDate+'-leftBarImage-wrf5-wn1" width="64px"/></td>'+
+                        '<td><div id="'+ncepDate+'-plot-wrf5-wn1"></div></td>'+
+                        '<td width="64px" align="left"><img id="'+ncepDate+'-rightBarImage-wrf5-wn1" width="64px"/></td>'+
+                    '</tr>'+
+                    '<tr>'+
+                        '<td></td>'+
+                        '<td>'+
+                            '<img height="64px" id="'+ncepDate+'-bottomBarImage-wrf5-wn1"/></td>'+
+                        '<td></td>'+
+                    '</tr>'+
+                '</table>'
+                );
+
+                let plotWrf5Wn1 = jQueryProtect("#"+ncepDate+"-plot-wrf5-wn1").MeteoUniparthenopePlot(_place, "wrf5", "wn1", ncepDate,
+                    ncepDate+"-topBarImage-wrf5-wn1",
+                    ncepDate+"-leftBarImage-wrf5-wn1",
+                    ncepDate+"-rightBarImage-wrf5-wn1",
+                    ncepDate+"-bottomBarImage-wrf5-wn1");
+
+                jQueryProtect("#wrf5-wn2").append(
+                    '<table>'+
+                    '<tr>'+
+                    '   <td></td>'+
+                    '<td>'+
+                    '<img height="64px" id="'+ncepDate+'-topBarImage-wrf5-wn2"/></td>'+
+                    '<td></td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td width="64px" align="right"><img id="'+ncepDate+'-leftBarImage-wrf5-wn2" width="64px"/></td>'+
+                    '<td><div id="'+ncepDate+'-plot-wrf5-wn2"></div></td>'+
+                    '<td width="64px" align="left"><img id="'+ncepDate+'-rightBarImage-wrf5-wn2" width="64px"/></td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td></td>'+
+                    '<td>'+
+                    '<img height="64px" id="'+ncepDate+'-bottomBarImage-wrf5-wn2"/></td>'+
+                    '<td></td>'+
+                    '</tr>'+
+                    '</table>'
+                );
+
+                let plotWrf5Wn2 = jQueryProtect("#"+ncepDate+"-plot-wrf5-wn2").MeteoUniparthenopePlot(_place, "wrf5", "wn2", ncepDate,
+                    ncepDate+"-topBarImage-wrf5-wn2",
+                    ncepDate+"-leftBarImage-wrf5-wn2",
+                    ncepDate+"-rightBarImage-wrf5-wn2",
+                    ncepDate+"-bottomBarImage-wrf5-wn2");
+
+                jQueryProtect("#rms3-gen").append(
+                    '<table>'+
+                    '<tr>'+
+                    '   <td></td>'+
+                    '<td>'+
+                    '<img height="64px" id="'+ncepDate+'-topBarImage-rms3-gen"/></td>'+
+                    '<td></td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td width="64px" align="right"><img id="'+ncepDate+'-leftBarImage-rms3-gen" width="64px"/></td>'+
+                    '<td><div id="'+ncepDate+'-plot-rms3-gen"></div></td>'+
+                    '<td width="64px" align="left"><img id="'+ncepDate+'-rightBarImage-rms3-gen" width="64px"/></td>'+
+                    '</tr>'+
+                    '<tr>'+
+                    '<td></td>'+
+                    '<td>'+
+                    '<img height="64px" id="'+ncepDate+'-bottomBarImage-rms3-gen"/></td>'+
+                    '<td></td>'+
+                    '</tr>'+
+                    '</table>'
+                );
+
+                let plotRms3Gen = jQueryProtect("#"+ncepDate+"-plot-rms3-gen").MeteoUniparthenopePlot(_place, "rms3", "gen", ncepDate,
+                    ncepDate+"-topBarImage-rms3-gen",
+                    ncepDate+"-leftBarImage-rms3-gen",
+                    ncepDate+"-rightBarImage-rms3-gen",
+                    ncepDate+"-bottomBarImage-rms3-gen");
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meteo Uniparthenope</title>
+    <link rel="stylesheet" href="css/jquery-ui.css"/>
+    <link rel="stylesheet" href="css/jquery-ui-timepicker-addon.min.css"/>
+    <link rel="stylesheet" href="css/meteo-uniparthenope.css"/>
+    <!--<link rel="stylesheet" href="css/leaflet.css"/>-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/leaflet-velocity.min.css"/>
+    <link rel="stylesheet" href="css/Control.Loading.css"/>
+    <link rel="stylesheet" href="css/ol.css"/>
+    <link rel="stylesheet" href="css/webapi.min.css"/>
+    <link rel="stylesheet" href="css/leaflet.pm.css"/>
+
+    <script src="js/js.cookie.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui-1.12.1.js"></script>
+    <script src="js/jquery-ui-sliderAccess.js"></script>
+    <script src="js/jquery-ui-timepicker-addon.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+    <!--<script src="js/leaflet.js"></script>-->
+    <script src="js/leaflet.groupedlayercontrol.js"></script>
+    <script src="js/geojson-tiles.js"></script>
+    <script src="js/TileLayer.GeoJSON.js"></script>
+    <script src="js/leaflet-velocity.min.js"></script>
+    <script src="js/spin.js"></script>
+    <script src="js/Control.Loading.js"></script>
+    <script src="js/leaflet.pm.min.js"></script>
+    <!--<script src="js/underscore-min.js"></script>-->
+    <!--<script src="js/moment.js"></script>-->
+    <!--
+    <script src="js/backbone-min.js"></script>
+    <script src="js/ol.js"></script>
+    -->
+    <!-- Protect jQuery variable. -->
+
+    <script>
+        let jQueryProtect = jQuery;
+    </script>
+
+    <!--<script src="js/webapi.min.js"></script>-->
+    <script src="js/webapi.min.no-dep.js"></script>
+    <script src="js/meteo-uniparthenope.js"></script>
+
+</head>
+<body>
+
+
+<div id="map" style="width: 1024px; height: 512px"></div>
+
+
+
+
+
+
+
+
+
+<script>
+
+
+
+    function getURLParameter(sParam, defaultValue) {
+
+        let sPageURL = window.location.search.substring(1);
+
+        let sURLVariables = sPageURL.split('&');
+
+        for (let i = 0; i < sURLVariables.length; i++) {
+            let sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] == sParam) {
+                return sParameterName[1];
+            }
+        }
+        return defaultValue;
+    }
+
+    let oMap=null;
+
+    let _place=getURLParameter("place","it000");
+    let _ncepDate=getURLParameter("date",null);
+    let _mapName=getURLParameter("mapName","muggles");
+
+
+    jQueryProtect( document ).ready(function() {
+
+        oMap=jQueryProtect("#map").MeteoUniparthenopeMap(_place,_ncepDate,{ "noPopup":false, "mapName":_mapName,"baseLink":"https://meteo.uniparthenope.it/product_dashboard/dashboard?"});
+        L.marker([51.5, -0.09]).addTo(oMap.map);
+
+        // add leaflet.pm controls with some options to the map
+        oMap.map.pm.addControls({
+            position: 'topleft',
+            drawCircle: false,
+        });
+    });
+
+</script>
+</body>
+</html>

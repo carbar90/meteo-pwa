@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meteo Uniparthenope</title>
+    <link rel="stylesheet" href="css/jquery-ui.css"/>
+    <link rel="stylesheet" href="css/jquery-ui-timepicker-addon.min.css"/>
+    <link rel="stylesheet" href="css/meteo-uniparthenope.css"/>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui-1.12.1.js"></script>
+    <script src="js/jquery-ui-sliderAccess.js"></script>
+    <script src="js/jquery-ui-timepicker-addon.min.js"></script>
+    <script>
+        let jQueryProtect = jQuery;
+    </script>
+    <script src="js/meteo-uniparthenope.js"></script>
+    <style>
+        .ui-autocomplete-loading {
+            background: white url("images/ui-anim_basic_16x16.gif") right center no-repeat;
+        }
+
+        /* 1em @ 48em (768px) increasing to 2em @ 120em (1920px) https://websemantics.uk/articles/responsive-fonts/ */
+        @media (min-width: 48rem) {
+            :root {
+                font-size: calc(1rem + ((1vw - .48rem) * 1.389));
+                /* .48rem = viewportWidthMinimum /100 */
+                /* 1.389rem = 100 * fontSizeDifference / viewportWidthDifference */
+            }
+        }
+
+        @media (min-width: 120em) {
+            :root {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="box" ></div>
+<script >
+
+    function getURLParameter(sParam, defaultValue) {
+
+        var sPageURL = window.location.search.substring(1);
+
+        var sURLVariables = sPageURL.split('&');
+
+        for (var i = 0; i < sURLVariables.length; i++) {
+            var sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] == sParam) {
+                return sParameterName[1];
+            }
+        }
+        return defaultValue;
+    }
+
+    var box=null;
+
+    var _prod=getURLParameter("prod","wrf5");
+    var _place=getURLParameter("place","com63049");
+    var _hours=parseInt(getURLParameter("hours","0"));
+
+    $( document ).ready(function() {
+        console.log("ready!");
+        box=$("#box").MeteoUniparthenopeBox(_place,_prod,_hours);
+    });
+
+</script>
+</body>
+</html>

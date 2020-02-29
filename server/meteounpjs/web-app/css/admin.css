@@ -1,0 +1,46 @@
+/* body ul {
+    background-color: red;
+} */
+#editor-container {
+    padding: 15px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h5 {
+    margin: 7px 0px;
+}
+
+#editor1-pane,
+#editor2-pane {
+    position: relative;
+    display: block;
+    border: solid 1px #bbb;
+}
+
+#editor1,
+#editor2 {
+    font-size: 9pt;
+}
+
+#editor1 .CodeMirror {
+    height: 600px;
+}
+
+#editor2 .CodeMirror {
+    height: 198px;
+}
+
+.form-container {
+    margin: 20px auto;
+}
+
+.btn-container {
+    margin: auto;
+    padding: 20px;
+}
+
+.btn-admin {
+    margin: 0 20px;
+}
+

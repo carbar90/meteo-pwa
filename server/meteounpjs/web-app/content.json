@@ -1,0 +1,847 @@
+{
+  "navbar": [
+    {
+      "_id": "home",
+      "order": 10,
+      "isHome":true,
+      "i18n": {
+        "en-US": {
+          "text": "Home",
+          "href": "index.html?place={place}&prod={prod}&output={output}&date={date}&step={step}&hours={hours}"
+        },
+        "it-IT": {
+          "text": "Home",
+          "href": "index.html?place={place}&prod={prod}&output={output}&date={date}&step={step}&hours={hours}"
+        }
+      }
+    },
+    {
+      "_id": "forecast",
+      "order": 20,
+      "i18n": {
+        "en-US": {
+          "text": "Forecast",
+          "items": [
+            {
+              "text": "Weather",
+              "href": "index.html?page=products&product=wrf5"
+            },
+            {
+              "text": "Air Quality",
+              "href": "index.html?page=products&product=chm5"
+            },
+            {
+              "text": "Marine",
+              "href": "index.html?page=products&product=rms3"
+            },
+            {
+              "text": "Water Quality",
+              "href": "index.html?page=products&product=wcm3"
+            },
+            {
+              "text": "Reports",
+              "href": "index.html?page=weatherreports"
+            }
+          ]
+        },
+        "it-IT": {
+          "text": "Forecast",
+          "items": [
+            {
+              "text": "Meteo",
+              "href": "index.html?page=products&product=wrf5"
+            },
+            {
+              "text": "Qualit&agrave; dell&apos;aria",
+              "href": "index.html?page=products&product=chm5"
+            },
+            {
+              "text": "Mare",
+              "href": "index.html?page=products&product=rms3"
+            },
+            {
+              "text": "Qualit&agrave; dell&apos; acqua",
+              "href": "index.html?page=products&product=wcm3"
+            },
+            {
+              "text": "Bollettini",
+              "href": "index.html?page=weatherreports"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "_id": "instruments",
+      "order": 30,
+      "i18n": {
+        "en-US": {
+          "text": "Instruments",
+          "items": [
+            {
+              "text": "Weather stations",
+              "href": "/index.html?page=weather_stations"
+            },
+            {
+              "text": "Weather Radars",
+              "href": "/index.html?page=weather_radars"
+            }
+          ]
+        },
+        "it-IT": {
+          "text": "Strumenti",
+          "items": [
+            {
+              "text": "Stazioni Meteo",
+              "href": "/index.html?page=weather_stations"
+            },
+            {
+              "text": "Radar Meteo",
+              "href": "/index.html?page=weather_radars"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "_id": "data",
+      "order": 40,
+      "i18n": {
+        "en-US": {
+          "text": "Data",
+          "items": [
+            {
+              "text": "OPeNDAP Server",
+              "href":"https://data.meteo.uniparthenope.it/opendap/opendap"
+            },
+            {
+              "text": "APIs",
+              "href":"/index.html?page=api"
+            }
+          ]
+        },
+        "it-IT": {
+          "text": "Dati",
+          "items": [
+            {
+              "text": "OPeNDAP Server",
+              "href":"https://data.meteo.uniparthenope.it/opendap/opendap"
+            },
+            {
+              "text": "API",
+              "href":"/index.html?page=api"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "_id": "models",
+      "order": 50,
+      "i18n": {
+        "en-US": {
+          "text": "Models",
+          "items": [
+            {
+              "text": "Weather Research and Forecast",
+              "href": "index.html?page=wrf"
+            },
+            {
+              "text": "CalMET",
+              "href": "index.html?page=calmet"
+            },
+            {
+              "text": "-"
+            },
+            {
+              "text": "Regional Ocean Model System",
+              "href": "/index.html?page=roms"
+            },
+            {
+              "text": "WaComM",
+              "href": "/index.html?page=wacomm"
+            },
+            {
+              "text": "WaweWatch3",
+              "href": "/index.html?page=wawewatch3"
+            },
+            {
+              "text": "Son of Beach",
+              "href": "/index.html?page=sob"
+            },
+            {
+              "text": {
+                "en": "-",
+                "it": "-"
+              }
+            },
+            {
+              "text": "Chimere",
+              "href": "/index.html?page=chimere"
+            },
+            {
+              "text": "CalPUFF",
+              "href": "/index.html?page=calpuff"
+            },
+            {
+              "text": "CAMx",
+              "href": "/index.html?page=camx"
+            }
+          ]
+        },
+        "it-IT": {
+          "text": "Modelli",
+          "items": [
+            {
+              "text": "Weather Research and Forecast",
+              "href": "index.html?page=wrf"
+            },
+            {
+              "text": "CalMET",
+              "href": "index.html?page=calmet"
+            },
+            {
+              "text": "-"
+            },
+            {
+              "text": "Regional Ocean Model System",
+              "href": "/index.html?page=roms"
+            },
+            {
+              "text": "WaComM",
+              "href": "/index.html?page=wacomm"
+            },
+            {
+              "text": "WaweWatch3",
+              "href": "/index.html?page=wawewatch3"
+            },
+            {
+              "text": "Son of Beach",
+              "href": "/index.html?page=sob"
+            },
+            {
+              "text": {
+                "en": "-",
+                "it": "-"
+              }
+            },
+            {
+              "text": "Chimere",
+              "href": "/index.html?page=chimere"
+            },
+            {
+              "text": "CalPUFF",
+              "href": "/index.html?page=calpuff"
+            },
+            {
+              "text": "CAMx",
+              "href": "/index.html?page=camx"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "_id": "applications",
+      "order": 60,
+      "i18n": {
+        "en-US": {
+          "text": "Applications",
+          "items": [
+            {
+              "text": "Mobile meteo@uniparthenope",
+              "href": "/"
+            },
+            {
+              "text": {
+                "en": "-",
+                "it": "-"
+              }
+            },
+            {
+              "text": "MytiluSE",
+              "href": "/"
+            },
+            {
+              "text": "CaRMEN",
+              "href": "/"
+            },
+            {
+              "text": "Napoli Summer Universiade 2019",
+              "href": "/"
+            }
+          ]
+        },
+        "it-IT": {
+          "text": "Applicazioni",
+          "items": [
+            {
+              "text": "Mobile meteo@uniparthenope",
+              "href": "/"
+            },
+            {
+              "text": {
+                "en": "-",
+                "it": "-"
+              }
+            },
+            {
+              "text": "MytiluSE",
+              "href": "/"
+            },
+            {
+              "text": "CaRMEN",
+              "href": "/"
+            },
+            {
+              "text": "Napoli Summer Universiade 2019",
+              "href": "/"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "_id": "services",
+      "order": 70,
+      "i18n": {
+        "en-US": {
+          "text": "Services",
+          "href": "index.html?page=services"
+        },
+        "it-IT": {
+          "text": "Servizi",
+          "href": "index.html?page=services"
+        }
+      }
+    },
+    {
+      "_id": "info",
+      "order": 80,
+      "i18n": {
+        "en-US": {
+          "text": "Info",
+          "items": [
+            {
+              "text": "About us",
+              "href":"index.html?page=about"
+            },
+            {
+              "text": "Funding",
+              "href":"index.html?page=funding"
+            },
+            {
+              "text": "People",
+            "href":"index.html?page=people"
+            },
+            {
+              "text": { "en":"-", "it": "-"}
+            },
+            {
+              "text": "Infrastructure",
+              "href":"index.html?page=infrastructure"
+            },
+            {
+              "text": { "en":"-", "it": "-"}
+            },
+            {
+              "text": "Research products",
+              "href":"index.html?page=research_products"
+            },
+            {
+              "text": "Open Source (Github)",
+              "href":"https://github.com/ccmmma/"
+            },
+            {
+              "text": "DagOnStart Workflow Engine",
+              "href":"https://github.com/dagonstar/"
+            }
+          ]
+        },
+        "it-IT": {
+          "text": "Info",
+          "items": [
+            {
+              "text": "Dettagli",
+              "href":"index.html?page=about"
+            },
+            {
+              "text": "Finanziamenti",
+              "href":"index.html?page=funding"
+            },
+            {
+              "text": "Persone",
+              "href":"index.html?page=people"
+            },
+            {
+              "text": { "en":"-", "it": "-"}
+            },
+            {
+              "text": "Infrastruttura",
+              "href":"index.html?page=infrastructure"
+            },
+            {
+              "text": { "en":"-", "it": "-"}
+            },
+            {
+              "text": "Prodotti della ricerca",
+              "href":"index.html?page=research_products"
+            },
+            {
+              "text": "Open Source (Github)",
+              "href":"https://github.com/ccmmma/"
+            },
+            {
+              "text": "DagOnStart Workflow Engine",
+              "href":"https://github.com/dagonstar/"
+            }
+          ]
+        }
+      }
+    }
+  ],
+
+
+  "pages": [
+  {
+    "_id": "about",
+    "active":true,
+    "author": "admin",
+    "i18n": {
+      "en-US": {
+        "title": "About",
+        "body": "<p>CMMMA (Center for Monitoring and Modelling Marine and Atmosphere research &amp; applications, aka meteo@uniparthenope) is a forecast service for real time monitoring of forecast and marine, weather and air quality simulations with a peculiar focus on the Campania Region of Italy.</p><p class=\"rtecenter\" style=\"\"><iframe allowfullscreen=\"\" frameborder=\"0\" height=\"315\" src=\"//www.youtube.com/embed/lkI47okV0Fc\" width=\"560\"></iframe></p><p>The Center (CMMMA, Center for Monitoring and Modelling for Marine and Atmosphere applications, aka meteo@uniparthenope)&nbsp;was born from decades of experience in the field of modeling, measurement and computational simulation in the marine and atmospheric environment of the Department of Environmental Sciences (DiSAM) and of the Department of Applied Sciences (DSA) of the University of Naples Parthenope, already Naval University Institute, which since 2013 have merged with the Department of Science and Technology.</p><p>The Center was funded by the University of Naples Parthenope with financial resources obtained from the Campania Region in the context of the L.R. n.13 2009 (Project PROMETEO / TASK 1). The director of the Center is Prof. Giulio Giunta and the scientific coordinator is Prof. Giorgio Budillon, computer services and computational resources are managed by prof. Raffaele Montella.</p><p>CMMMA offers its services of weather, marine and air quality forecast to common people, local government, research institutions, business companies, environmental and health assessment companies, yachting control authority, sporting partnerships, and others. The data provided by the Center is available on the official web page http://meteo.uniparthenope.it.</p><p>From this perspective, CMMMA commits to provide high resolution weather forecast for the America&apos;s Cup World Series event in Napoli on April 7-15th 2012 in a new dedicated website section. In particular, wind speed and direction forecasts are produced with up to 250m resolutions on the racecourse, using the model chain and computational resource available to CMMMA. It is relevant to underline that this is the highest resolution achievable with current forecast technologies.</p><p>CMMMA monitors the Gulf of Napoli area through a data acquisition network with various weather stations. A CODAR radar system&nbsp;determines the surface ocean current and, for the first time in Campania, a next generation weather radar on Castel Sant&apos;Elmo which can determine an approaching storm front and its evolution on the area of the Gulf of Napoli with 300m resolution.</p><p>The Center uploads the results of its numerical weather predictions on an interactive user interface. Moreover, the data is compatible with professional navigation tools (Grib), scientific software (OpenDAP) and 3D visualization in the Google Earth browser (KML).</p><p>Mobile Android apps are available and application-programming interfaces will be provided to allow the development of new applications in the smart cities project.</p>",
+        "links" : [
+          { "href": "index.html?page=funding", "text": "Funding"},
+          { "href": "index.html?page=people", "text": "People"},
+          { "href": "index.html?page=services", "text": "Services"},
+          { "href": "index.html?page=opendap", "text": "OPeNDAP"},
+          { "href": "index.html?page=api", "text": "APIs"}
+        ]
+      },
+      "it-IT": {
+        "title": "Informazioni"
+      }
+    }
+  },
+  {
+    "_id": "services",
+    "active":true,
+    "author": "admin",
+    "i18n": {
+      "en-US": {
+        "title": "Services",
+        "image": { "src": "images/services_01.png", "alt": "Services"},
+        "body": "<p>The CMMMA is active within the Department of Science and Technology of the University of Naples Parthenope and boasts a centenary experience about to the historical Faculty of Nautical Sciences as an expression of the traction of weather-oceanographic studies born with the Royal Naval Institute in 1920, then Naval University Institute until 2001.</p><p>The following services can be provided in the following regulatory framework:</p><ul><li>Services free of charge and of moral patronage.</li><li>Services deriving from the research activity as \"<em>Research Agreement between the Department and other public or private institution</em>\".</li><li>Services provided under the \"<em>third party</em>\" professional activity.</li></ul><p><strong>Non-exhaustive list of possible services and activities:</strong></p><ul><li><strong>Navigation services.</strong><br />The CMMMA has a strong specialization in forecasting and weather services for recreational and professional boating. The modeling chain offers products with a high temporal and spatial resolution throughout the Mediterranean area, focusing on the central and southern sectors of the Tyrrhenian Sea. In prototype mode since 1999 and in production since 2010, we have supported the major sailing events organised within the Sailing Italian Federation&nbsp;V Zone&nbsp;such as&nbsp;2 editions of the America&apos;s Cup World Series, the Italian Championship of Olympic Classes,&nbsp;the Optisud trophy, the ORC Italian Championship, the Velalonga, the Classic Boats Championship and the Vesuvio Race.<br />&nbsp;</li><li><strong>Presentations and seminars.</strong><br />The CMMMA staff is always ready to organize presentations and seminars on specific activities concerning meteorology, forecasts and the sea sciences in general. These activities are usually completely free or, under certain conditions, covered only by reimbursement of expenses, as they fall within the so-called Third Academic Mission. These activities include, for example, specific seminars at boat clubs.<br />&nbsp;</li><li><strong>Media and&nbsp;social media.</strong><br />CMMMA offers personalized services to Radio, TV and Newspapers. We are able to provide audio recordings for radios, predictive videos customized in different formats and resolutions, and finally for Newspapers we create pages ready to go to print.<br />&nbsp;</li><li><strong>Web Portals.</strong><br />Do you have a web portal and want to enter the weather forecast? CMMMA offers a wide range of widgets for free. Choose the location or region of your interest and customize it by choosing the size and colors, it&apos;s easy!<br />&nbsp;</li><li><strong>School and Education.</strong><br />Are you the administrator of the web portal of a kindergarten, elementary or higher?<br />CMMMA offers you the possibility to insert weather information! It is also possible to have staff representatives as experts in the field to introduce meteorology, oceanography, computation sciences to new generations of students.<br />&nbsp;</li><li><strong>Weather Management Service &amp; Weather App.</strong><br />Are you a publisher? An institution? A service portal? We offer you a professional and personalized solution ready in a very short time to provide your users with a complete, functional and fully integrated weather section with the website portal, with your mobile application or a completely new mobile application.<br />&nbsp;</li><li><strong>Weather report.</strong><br />If you have a hotel or a tourist activity, with CMMMA you can automatically receive a weather report in free PDF format, to be printed and shown to your customers, with always reliable and clear weather forecasts.<br />&nbsp;</li><li><strong>Weather consultant.</strong>CMMMA is a leader in the supply of products and services with high added value for meteorology, in line with the needs of the times, ready to respond to every use.</li></ul><p>To get specific information on the best solutions to be adopted in the specific case, for requests for moral patronage and for the co-organization of events, send an email to <a href=\"mailto:meteo@uniparthenope.it\">meteo@uniparthenope.it</a> detailing the request.</p><p>&nbsp;</p>"
+      },
+      "it-IT": {
+        "title": "Servizi",
+        "image": { "src": "images/services_01.png", "alt": "Servizi"},
+        "body": "<p>Il CMMMA &egrave; operante nell&apos;ambito del Dipartimento di Scienze e Tecnologie dell&apos;Universit&agrave; degli Studi di Napoli Parthenope e vanta un&apos;esperienza centenaria legata alla storica Facolt&agrave; di Scienze Nautiche come espressione della trazione degli studi meteo-oceanografici nata con il Regio Istituto Superiore Navale nel 1920, poi Istituto Universitario Navale fino al 2001.</p><p>I servizi che seguono possono essere erogati nel seguente inquadramento normativo:</p><ul><li>Servizi a titolo gratuito e di patrocinio morale.</li><li>Servizi derivanti dall&apos;attivit&agrave; di ricerca come \"<em>Convenzione di Ricerca fra il Dipartimento ed altra Istituzione pubblica o privata</em>\".</li><li>Servizi erogati in regime di attivit&agrave; professionale \"<em>Conto terzi</em>\".</li></ul><p><strong>Elenco non esaustivo di possibili servizi e attivit&agrave;:</strong></p><ul><li><strong>Servizi per la Nautica.</strong><br />Il CMMMA ha una forte specializzazione&nbsp;in previsioni e servizi meteo per la nautica da diporto e professionale. La catena modellistica offre prodotti ad alta risoluzione temporale e spaziale su tutta l&apos;area mediterranea con focalizzazione sui settori centrali e meridionali del mar Tirreno. In maniera prototipale dal 1999 e in produzione dal 2010, abbiamo dato supporto ai maggiori eventi velici della V Zona FIV fra cui 2 edizioni della America&apos;s Cup World Series, il Campionato Italiano Classi Olimpiche, Trofeo Optisud, Campionato Italiano ORC, Velalonga, Campionato Barche d&apos;Epoca, Vesuvio Race.<br />&nbsp;</li><li><strong>Presentazioni e seminari.</strong><br />Lo staff le CMMMA &egrave; sempre pronto a organizzare presentazioni e seminari su specifiche attivit&agrave; che riguardano la meteorologia, le previsioni e le scienze del mare in generale. Queste attivit&agrave; sono solitamente completamente gratuite o, in particolari condizioni, coperte dal solo rimborso spese,&nbsp;poiché rientranti nella cosiddetta Terza Missione Accademica. Rientrano in queste attivit&agrave;, ad esempio, i seminari specifici presso i circoli nautici.&nbsp;<br />&nbsp;</li><li><strong>Media e social media.</strong><br />CMMMA offre servizi personalizzati a Radio, TV e Quotidiani. Siamo in grado di fornire registrazioni audio per le radio, video previsionali personalizzati in differenti formati e risoluzioni, ed infine per i Quotidiani creiamo pagine gi&agrave; pronte per andare in stampa.<br />&nbsp;</li><li><strong>Portali web.</strong><br />Hai un portale&nbsp;web e vuoi inserire le previsioni meteo? CMMMA offre gratuitamente una vasta gamma di widget. Scegli la localit&agrave; o la regione di tuo interesse e personalizzalo scegliendo la dimensione e i colori, &egrave; facilissimo!<br />&nbsp;</li><li><strong>Scuole di ogni ordine e grado.</strong><br />Sei l&apos;amministratore del portale web di una scuola materna,&nbsp;elementare o superiore?<br />CMMMA ti offre&nbsp;la possibilit&agrave; di inserire informazioni meteo! Inoltre &egrave; possibile avere rappresentanti dello staff in veste di esperti del settore per introdurre la meteorologia, l&apos;oceanografia, le scienze della computazione alle nuove generazioni di studenti.<br />&nbsp;</li><li><strong>Weather Management Service &amp; Weather App.</strong><br />Sei un editore? Una istituzione? Un portale di servizi? Ti offriamo una soluzione professionale personalizzata e pronta in tempi brevissimi per fornire ai tuoi utenti una sezione meteo completa, funzionale e completamente integrata con il portale sito, con la tua applicazione mobile o un&apos;applicazione mobile completamente nuova.<br />&nbsp;</li><li><strong>Bollettino meteo in qualit&agrave; editoriale.</strong><br />Se hai un hotel o un&apos;attivit&agrave; turistica, con CMMMA puoi ricevere automaticamente un bollettino meteo in formato PDF gratuito, da stampare e mostrare ai tuoi clienti, con previsioni meteo sempre affidabili e chiare.<br />&nbsp;</li><li><strong>Consulenze meteo.</strong><br />CMMMA&nbsp;&egrave; leader nella fornitura di prodotti e servizi ad alto valore aggiunto per la meteorologia, in linea con le esigenze dei tempi, pronti a rispondere ad ogni utilizzo.</li></ul><p>Per avere informazioni specifiche sulla migliore delle soluzioni da adottare nello specifico caso, per le richieste di patrocinio morale e per la co-organizzazione di eventi, inviare una mail a <a href=\"mailto:meteo@uniparthenope.it\">meteo@uniparthenope.it</a> dettagliando la richiesta.</p><p>&nbsp;</p>"
+      }
+    }
+  },
+  {
+    "_id": "wrf",
+    "active":true,
+    "author": "admin",
+    "i18n": {
+      "en-US": {
+        "title": "The Weather Research and Forecast model",
+        "summary": "Weather Research and Forecast",
+        "image": { "src": "https://api.meteo.uniparthenope.it/products/wrf5/forecast/eu000/plot/image","alt": "Weather Forecast on Europe produced by CMMMA WRF"},
+        "body": "<p>The Weather Research and Forecasting (WRF) Model is a next-generation mesoscale numerical weather prediction system designed to serve both operational forecasting and atmospheric research needs. It features multiple dynamical cores, a 3-dimensional variational (3DVAR) data assimilation system, and a software architecture allowing for computational parallelism and system extensibility. WRF is suitable for a broad spectrum of applications across scales ranging from meters to thousands of kilometers.</p><div align=\"center\"><strong>Weather current situation</strong></div><table border=\"0\"><tbody><tr><td><img src=\"https://api.meteo.uniparthenope.it/products/wrf5/forecast/eu000/plot/image\" /><div align=\"center\"><a href=\"https://api.meteo.uniparthenope.it/products/wrf5/forecast/eu000/plot/image\">Europe</a></div></td><td><img src=\"https://api.meteo.uniparthenope.it/products/wrf5/forecast/it000/plot/image\" /><div align=\"center\"><a href=\"https://api.meteo.uniparthenope.it/products/wrf5/forecast/it000/plot/image\">Italy</a></div></td><td><img src=\"https://api.meteo.uniparthenope.it/products/wrf5/forecast/ca000/plot/image\" /><div align=\"center\"><a href=\"https://api.meteo.uniparthenope.it/products/wrf5/forecast/ca000/plot/image\">Campania Region</a></div></td></tr><tr><td valign=\"top\">Resolution: 27km<br />Forecast: 144h<br />Initialization: Z00, Z06, Z12, Z18<br />Data: http://blackjeans.uniparthenope.it:9090/dods/wrf3/d01</td><td valign=\"top\">Resolution: 9km<br />Forecast: 144h<br />Initialization: Z00, Z06, Z12, Z18<br />Data: http://blackjeans.uniparthenope.it:9090/dods/wrf3/d02</td><td valign=\"top\">Resolution: 3km<br />Forecast: 144h<br />Initialization: Z00, Z06, Z12, Z18<br />Data: http://blackjeans.uniparthenope.it:9090/dods/wrf3/d03</td></tr></tbody></table><p>The effort to develop WRF has been a collaborative partnership, principally among the National Center for Atmospheric Research (NCAR), the National Oceanic and Atmospheric Administration (the National Centers for Environmental Prediction (NCEP) and the Forecast Systems Laboratory (FSL), the Air Force Weather Agency (AFWA), the Naval Research Laboratory, the University of Oklahoma, and the Federal Aviation Administration (FAA). WRF allows researchers the ability to conduct simulations reflecting either real data or idealized configurations. WRF provides operational forecasting a model that is flexible and efficient computationally, while offering the advances in physics, numerics, and data assimilation contributed by the research community. WRF has a rapidly growing community of users, and workshops and tutorials are held each year at NCAR. WRF is currently in operational use at NCEP, AFWA and other centers. This site provides information on the WRF effort and its organization, references to projects and forecasting involving WRF, and links to the WRF users&apos; page, real-time applications, and WRF-related events.</p><div align=\"center\"><strong>High Resolution Winds current situation</strong></div><table border=\"0\"><tbody><tr><td><img src=\"https://api.meteo.uniparthenope.it/products/wrf5/forecast/eu000/plot/image?output=wn1\" /><div align=\"center\"><a href=\"https://api.meteo.uniparthenope.it/products/wrf5/forecast/eu000/plot/image?output=wn1\">Europe</a></div></td><td><img src=\"https://api.meteo.uniparthenope.it/products/wrf5/forecast/it000/plot/image?output=wn1\" width=\"320\" /><div align=\"center\"><a href=\"https://api.meteo.uniparthenope.it/products/wrf5/forecast/it000/plot/image?output=wn1\">Italy</a></div></td><td><img src=\"https://api.meteo.uniparthenope.it/products/wrf5/forecast/ca000/plot/image?output=wn1\" width=\"320\" /><div align=\"center\"><a href=\"https://api.meteo.uniparthenope.it/products/wrf5/forecast/ca000/plot/image?output=wn1\">Campania Region</a></div></td></tr><tr><td valign=\"top\">Resolution: 25km<br />Forecast: 24h<br />Initialization: Z00, Z06, Z12, Z18<br />Data: http://blackjeans.uniparthenope.it:9090/dods/wrf5/d01</td><td valign=\"top\">Resolution: 5km<br />Forecast: 24h<br />Initialization: Z00, Z06, Z12, Z18<br />Data: http://blackjeans.uniparthenope.it:9090/dods/wrf5/d02</td><td valign=\"top\">Resolution: 1km<br />Forecast: 24h<br />Initialization: Z00, Z06, Z12, Z18<br />Data: http://blackjeans.uniparthenope.it:9090/dods/wrf5/d03</td></tr></tbody></table><p>More info about the WRF model: <a href=\"wrf-model.org\">http://wrf-model.org</a></p>",
+        "links" : [
+          { "href": "http://www.wmo.int", "text": "World Meteorological Organization"},
+          { "href": "http://www.ecmwf.int", "text": "European Centre for Medium-Range Weather Forecasts"},
+          { "href": "http://www.noaa.gov", "text": "National Oceanic and Atmosphere Organization"},
+          { "href": "http://ncar.ucar.edu/", "text": "National Center for Atmospheric Research"},
+          { "href": "http://www.ncep.noaa.gov", "text": "National Centers for Environmental Prediction"},
+          { "href": "http://www.emc.ncep.noaa.gov", "text": "National Weather Service&apos;s National Centers For Environmental Prediction&apos;s Environmental Modeling Center."},
+          { "href": "http://www.nco.ncep.noaa.gov/pmb/products", "text": "Inventory of Data Products on the NOAA Servers"},
+          { "href": "http://www.emc.ncep.noaa.gov/GFS", "text": "Global Forecast System"},
+          { "href": "https://www.mmm.ucar.edu/weather-research-and-forecasting-model", "text": "Weather Research and Forecast"},
+          { "href": "http://cola.gmu.edu/grads", "text": "Grid Analysis and Display System (GrADS)"},
+          { "href": "http://www.vapor.ucar.edu", "text": "Visualization and Analysis Platform for Ocean, Atmosphere, and Solar Researchers (VAPOR)"}
+        ]
+      },
+      "it-IT": {
+        "title": "Il modello Weather Research and Forecast",
+        "summary": "Weather Research and Forecast",
+        "image": { "src": "https://api.meteo.uniparthenope.it/products/wrf5/forecast/eu000/plot/image","alt": "Previsioni meteo sull&apos;Europa prodotte dal CMMMA WRF"},
+        "body": "<p>Il modello Weather and Research Forecast (WRF) &egrave; un sistema di previsioni meteo numeriche su mesoscala di nuova generazione, progettato per soddisfare ricerche operative sia meteorologiche che atmoferiche. Presenta nuclei dinamici multipli, un sistema di assimilazione dati su variablili tridimensionali (3DVAR) e un&apos;architettura software che consente il calcolo parallelo e l&apos;estensione del sistema. WRF &egrave; adatto a un&apos;ampia gamma di applicazioni in una scala che va da pochi metri a migliaia di chilometri.</p><div align=\"center\"><strong>Weather current situation</strong></div><table border=\"0\"><tbody><tr><td><img src=\"https://api.meteo.uniparthenope.it/products/wrf5/forecast/eu000/plot/image\" /><div align=\"center\"><a href=\"https://api.meteo.uniparthenope.it/products/wrf5/forecast/eu000/plot/image\">Europe</a></div></td><td><img src=\"https://api.meteo.uniparthenope.it/products/wrf5/forecast/it000/plot/image\" /><div align=\"center\"><a href=\"https://api.meteo.uniparthenope.it/products/wrf5/forecast/it000/plot/image\">Italy</a></div></td><td><img src=\"https://api.meteo.uniparthenope.it/products/wrf5/forecast/ca000/plot/image\" /><div align=\"center\"><a href=\"https://api.meteo.uniparthenope.it/products/wrf5/forecast/ca000/plot/image\">Campania Region</a></div></td></tr><tr><td valign=\"top\">Resolution: 27km<br />Forecast: 144h<br />Initialization: Z00, Z06, Z12, Z18<br />Data: http://blackjeans.uniparthenope.it:9090/dods/wrf3/d01</td><td valign=\"top\">Resolution: 9km<br />Forecast: 144h<br />Initialization: Z00, Z06, Z12, Z18<br />Data: http://blackjeans.uniparthenope.it:9090/dods/wrf3/d02</td><td valign=\"top\">Resolution: 3km<br />Forecast: 144h<br />Initialization: Z00, Z06, Z12, Z18<br />Data: http://blackjeans.uniparthenope.it:9090/dods/wrf3/d03</td></tr></tbody></table><p>Lo sviluppo del WRF &egrave; stato il risultato di una collaborazione, in primo luogo fra il National Center for Atmospheric Research (NCAR), il National Oceanic and Atmospheric Administration (i National Centers for Environmental Prediction, NCEP) ed il Forecast Systems Laboratory (FSL), la Air Force Weather Agency (AFWA), il Naval Research Laboratory, la University of Oklahoma e la Federal Aviation Administration (FAA). WRF offre ai ricercatori la possibilità di condurre simulazioni che riflettano sia dati reali che configurazioni ideali. WRF fornisce alle previsioni operative un modello flessibile ed efficiente dal punto di vista computazionale, oltre ai progressi nel campo della fisica, dei metodi numerici e dell&apos;assimilazione dati a cui ha contribuito la comunità dei ricercatori. WRF ha una comunità di utenti che aumenta rapidamente ed ogni anno nel Centro NCAR si tengono workshop e tutorial. WRF al momento &egrave; operativo, fra gli altri, nei Centri NCEP e AFWA. Questo sito fornisce informazioni sull&apos;iniziativa WRF e la sua organizzazione, riferimenti a progetti e previsioni che utilizzano WRF e collegamenti alla pagina utenti di WRF, applicazioni in tempo reale ed eventi correlati a WRF.</p>\n\n<div align=\"center\"><strong>Situazione corrente venti ad alta risoluzione</strong></div>\n\n<table border=\"0\">\n\t<tbody>\n\t\t<tr>\n\t\t\t<td><img src=\"http://blackjeans.uniparthenope.it/prods/modeloutput.php?model=wrf5&amp;region=eu000&amp;output=wn1\" width=\"320\" />\n\t\t\t<div align=\"center\"><a href=\"http://ccmmma.uniparthenope.it/?q=forecast/weather&amp;region=eu000&amp;output=wn1\">Europa</a></div>\n\t\t\t</td>\n\t\t\t<td><img src=\"http://blackjeans.uniparthenope.it/prods/modeloutput.php?model=wrf5&amp;region=it000&amp;output=wn1\" width=\"320\" />\n\t\t\t<div align=\"center\"><a href=\"http://ccmmma.uniparthenope.it/?q=forecast/weather&amp;region=it000&amp;output=wn1\">Italia</a></div>\n\t\t\t</td>\n\t\t\t<td><img src=\"http://blackjeans.uniparthenope.it/prods/modeloutput.php?model=wrf5&amp;region=ca000&amp;output=wn1\" width=\"320\" />\n\t\t\t<div align=\"center\"><a href=\"http://ccmmma.uniparthenope.it/?q=forecast/weather&amp;region=ca000&amp;output=wn1\">Regione Campania</a></div>\n\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td valign=\"top\">Risoluzione: 25km<br />\n\t\t\tPrevisione: 24h<br />\n\t\t\tInizializzazione: Z00, Z06, Z12, Z18<br />\n\t\t\tDati: http://blackjeans.uniparthenope.it:9090/dods/wrf5/d01</td>\n\t\t\t<td valign=\"top\">Risoluzione: 5km<br />\n\t\t\tPrevisione: 24h<br />\n\t\t\tInizializzazione: Z00, Z06, Z12, Z18<br />\n\t\t\tDati: http://blackjeans.uniparthenope.it:9090/dods/wrf5/d02</td>\n\t\t\t<td valign=\"top\">Risoluzione: 1km<br />\n\t\t\tPrevisione: 24h<br />\n\t\t\tInizializzazione: Z00, Z06, Z12, Z18<br />\n\t\t\tDati: http://blackjeans.uniparthenope.it:9090/dods/wrf5/d03</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n<p>Maggiori informazioni sul modello WRF: http://www.wrf-model.org</p>\n\n<p>Links:<br />\n<a href=\"http://www.wmo.int/pages/index_en.html\">WMO</a><a> </a><br />\n<a href=\"http://www.wmo.int/pages/prog/www/OSY/GOS.html\">GOS</a><a> </a><br />\n<a href=\"http://www.ecmwf.int/\">ECMWF</a><a> </a><br />\n<a href=\"http://www.noaa.gov/\">NOAA</a><a> </a><br />\n<a href=\"http://ncar.ucar.edu/\">NCAR</a><a> </a><br />\n<a href=\"http://www.ncep.noaa.gov/\">NOAA/NCEP</a><a> </a><br />\n<a href=\"http://www.emc.ncep.noaa.gov/\">NOAA/EMC</a><a> </a><br />\n<a href=\"http://www.nco.ncep.noaa.gov/pmb/products/\">NOAA/NCO</a><a> </a><br />\n<a href=\"http://www.emc.ncep.noaa.gov/GFS/\">GFS</a><a> </a><br />\n<a href=\"ftp://ftpprd.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/\">NCEP DATA GFS</a><a> </a><br />\n<a href=\"ftp://ftpprd.ncep.noaa.gov/pub/data/nccf/com/\">FTPPRD/NCEP</a><a> </a><br />\n<a href=\"http://www.nco.ncep.noaa.gov/pmb/products/gfs\">NCO GFS prods</a><a> </a><br />\n<a href=\"http://www.mmm.ucar.edu/wrf/users/download/get_source.html\">WRF get source</a><a> </a><br />\n<a href=\"http://www.unidata.ucar.edu/software/netcdf/\">NetCDF</a><a> </a><br />\n<a href=\"http://www.ece.uvic.ca/~mdadams/jasper/\">JASPER</a><a> </a><br />\n<a href=\"http://www.mmm.ucar.edu/wrf/users/docs/user_guide_V3/contents.html\">WRF TUTORIAL</a><a> </a><br />\n<a href=\"http://www.dtcenter.org/wrf-nmm/users/support/tutorial.php\">WRF-NMM Support</a><a> </a><br />\n<a href=\"http://www.dtcenter.org/met/users/\">DTC MET</a><a> </a><br />\n<a href=\"http://ngwww.ucar.edu/\">NCAR Graphics</a><a> </a><br />\n<a href=\"http://www.ssec.wisc.edu/~billh/vis5d.html\">Vis5D</a><a> </a><br />\n<a href=\"http://www.iges.org/grads/\">GrADS</a><a> </a><br />\n<a href=\"http://www.hdfgroup.org/HDF5/PHDF5/\">Parallel HDF5</a><a> </a><br />\n<a href=\"http://www.vapor.ucar.edu/\">VAPOR</a><a> </a><br />\n<a href=\"http://www.eurometeo.com/italian/forecast/city_LIRN\">EuroMETEO - Na</a><a> </a><br />\n<a href=\"http://www.meteoalarm.eu/\">MeteoAlarm</a><a> </a><br />\n<a href=\"http://www.meteosatonline.it/\">Meteosat On Line</a><a> </a></p>\n"
+      }
+    }
+  },
+  {
+    "_id": "calmet",
+    "active":true,
+    "author": "admin",
+    "i18n": {
+      "en-US": {
+        "title": "CALMET",
+        "body": "<p>CALMET/CALPUFF/CALGRID models have been designed and developed as a part of a generalized non-steady-state air quality system and have been adopted by US-EPA (Environmental Protection Agency) as a recommended model system for regulatory purposes. The design specifications for the modeling system include: (1) the capability to treat time-varying meteorological conditions, (2) suitability for modeling domains from tens of meters to hundreds of kilometers, (3) predictions for averaging times ranging from one hour to one year, (4) applicability for rough or complex terrain situations.</p><div align=\"center\"><strong>High Resolution wind field</strong></div><table border=\"0\"><tbody><tr><td><img src=\"https://api.meteo.uniparthenope.it/products/clm3/forecast/ca001/plot/image?output=wn1\" /><div align=\"center\"><a href=\"index.html?page=forecast&prod=clm3&amp;place=ca001&amp;output=wn1\">Gulf of Naples</a></div></td><td><img src=\"https://api.meteo.uniparthenope.it/products/clm3/forecast/ca004/plot/image?output=wn1\" /><div align=\"center\"><a href=\"index.html?page=forecast&prod=clm3&amp;place=ca004&amp;output=wn1\">Bay of Naples</a></div></td><td><img src=\"https://api.meteo.uniparthenope.it/products/clm3/forecast/ca015/plot/image?output=wn1\" /><div align=\"center\"><a href=\"index.html?page=forecast&prod=clm3&amp;place=ca015&amp;output=wn1\">ACWS 2012/2013 race field</a></div></td></tr><tr><td valign=\"top\">Resolution: 500m<br />Forecast: 24h<br />Initialization: Z00</td><td valign=\"top\">Resolution: 250m<br />Forecast: 24h<br />Initialization: Z00</td><td valign=\"top\">Resolution: 250km<br />Forecast: 24h<br />Initialization: Z00</td></tr></tbody></table><p>Specifically, CALMET includes a diagnostic wind field generator containing objective analysis and parameterized treatments of slope flows, kinematic terrain effects, terrain blocking effects, a divergence minimization procedure and a micro-meteorological model for overland and overwater boundary layers.</p>"
+      }
+    }
+  }
+],
+  "cards": [
+    {
+      "_id": "weatherreports",
+      "active":true,
+      "order": 10,
+      "i18n": {
+        "en-US": {
+          "image": {
+            "src":"https://api.meteo.uniparthenope.it/products/wrf5/forecast/reg15/map/image",
+            "alt":"Latest Weather Report"
+          },
+          "title": { "url": "https://api.meteo.uniparthenope.it/v2/weatherreports/latest/title/json" },
+          "text": "Daily weather report issued by meteo@uniparthenope experts.",
+          "button": {
+            "text": "Read more...",
+            "href": "index.html?page=weatherreports"
+          }
+        },
+        "it-IT": {
+          "image": {
+            "src":"https://api.meteo.uniparthenope.it/products/wrf5/forecast/reg15/map/image",
+            "alt":"Ultimo Bollettino Meteo"
+          },
+          "title": { "url": "https://api.meteo.uniparthenope.it/v2/weatherreports/latest/title/json" },
+          "text": "Bollettino meteorologico emesso dagli esperti di meteo@uniparthenope.",
+          "button": {
+            "text": "Leggi...",
+            "href": "index.html?page=weatherreports"
+          }
+        }
+      }
+    },
+    {
+      "_id": "wrf_crh",
+      "active":true,
+      "order": 20,
+      "i18n": {
+        "en-US": {
+          "image": {
+            "src":"https://api.meteo.uniparthenope.it/products/wrf5/forecast/{place}/plot/image?output=gen&date={date}",
+            "alt": "Clouds, Rain and Wind Field"
+          },
+          "title": "Clouds, Rain and Wind Field",
+          "text": "Forecast: 168 hours (7 days).<br/>Resolution: 25km (Europe), 5km (Italy), 1km (Eastern sectors of the Central and Southern Tyrrenian Sea)",
+          "button": {
+            "text": "WRF",
+            "href": "index.html?page=products&prod=wrf5&place={place}&output=gen&date={date}"
+          }
+        },
+        "it-IT": {
+          "image": {
+            "src":"https://api.meteo.uniparthenope.it/products/wrf5/forecast/{place}/plot/image?output=gen&date={date}",
+            "alt": "Copertura nuvolosa, Precipitazioni e Vento"
+          },
+          "title": "Copertura nuvolosa, Precipitazioni e Vento",
+          "text": "Previsione: 168 ore (7 giorni).<br/>Risoluzione: 25km (Europa), 5km (Italia), 1km (Settori Est del Mar Tirreno Centrale e Meridionale).",
+          "button": {
+            "text": "WRF",
+            "href": "index.html?page=products&prod=wrf5&place={place}&output=gen&date={date}"
+          }
+        }
+      }
+    },
+    {
+      "_id": "wrf_wn1",
+      "active":true,
+      "order": 30,
+      "i18n": {
+        "en-US": {
+          "image": {
+            "src":"https://api.meteo.uniparthenope.it/products/wrf5/forecast/{place}/plot/image?output=wn1&date={date}",
+            "alt": "Wind Field at 10m"
+          },
+          "title": "Wind Field at 10m",
+          "text": "Forecast: 168 hours (7 days).<br/>Resolution: 25km (Europe), 5km (Italy), 1km (Eastern sectors of the Central and Southern Tyrrenian Sea)",
+          "button": {
+            "text": "WRF",
+            "href": "index.html?page=products&prod=wrf5&place={place}&output=wn1&date={date}"
+          }
+        },
+        "it-IT": {
+          "image": {
+            "src":"https://api.meteo.uniparthenope.it/products/wrf5/forecast/{place}/plot/image?output=wn1&date={date}",
+            "alt": "Campo di Vento a 10m sul livello del mare."
+          },
+          "title": "Campo di vento a 10m.",
+          "text": "Previsione: 168 ore (7 giorni).<br/>Risoluzione: 25km (Europa), 5km (Italia), 1km (Settori Est del Mar Tirreno Centrale e Meridionale).",
+          "button": {
+            "text": "WRF",
+            "href": "index.html?page=products&prod=wrf5&place={place}&output=wn1&date={date}"
+          }
+        }
+      }
+    },
+    {
+      "_id": "wrf_tsp",
+      "active":true,
+      "order": 40,
+      "i18n": {
+        "en-US": {
+          "image": {
+            "src":"https://api.meteo.uniparthenope.it/products/wrf5/forecast/{place}/plot/image?output=tsp&date={date}",
+            "alt": "Temperature at 2m and Sea Level Pressure."
+          },
+          "title": "Temperature at 2m and Sea Level Pressure.",
+          "text": "Forecast: 168 hours (7 days).<br/>Resolution: 25km (Europe), 5km (Italy), 1km (Eastern sectors of the Central and Southern Tyrrenian Sea)",
+          "button": {
+            "text": "WRF",
+            "href": "index.html?page=products&prod=wrf5&place={place}&output=tsp&date={date}"
+          }
+        },
+        "it-IT": {
+          "image": {
+            "src":"https://api.meteo.uniparthenope.it/products/wrf5/forecast/{place}/plot/image?output=tsp&date={date}",
+            "alt": "Temperature at 2m and Sea level pressure"
+          },
+          "title": "Temperature at 2m and Sea level pressure",
+          "text": "Previsione: 168 ore (7 giorni).<br/>Risoluzione: 25km (Europa), 5km (Italia), 1km (Settori Est del Mar Tirreno Centrale e Meridionale).",
+          "button": {
+            "text": "WRF",
+            "href": "index.html?page=products&prod=wrf5&place={place}&output=tsp&date={date}"
+          }
+        }
+      }
+    },
+    {
+      "_id": "rms3_gen",
+      "active":true,
+      "order": 50,
+      "avail": "https://api.meteo.uniparthenope.it/products/rms3/{place}/avail?date={date}",
+      "i18n": {
+        "en-US": {
+          "image": {
+            "src":"https://api.meteo.uniparthenope.it/products/rms3/forecast/{place}/plot/image?output=gen&date={date}",
+            "alt": "Surface sea current"
+          },
+          "title": "Surface sea current",
+          "text": "Forecast: 144 hours (6 days).<br/>Resolution: 160m (Campania Region coasts and related boundaries)",
+          "button": {
+            "text": "ROMS",
+            "href": "index.html?page=products&prod=rms3&place={place}&output=gen&date={date}"
+          }
+        },
+        "it-IT": {
+          "image": {
+            "src":"https://api.meteo.uniparthenope.it/products/rms3/forecast/{place}/plot/image?output=gen&date={date}",
+            "alt": "Corrente marina superficiale."
+          },
+          "title": "Corrente marina superficiale.",
+          "text": "Previsione: 144 ore (6 giorni).<br/>Resolution: 160m (Area costiera della Regione Campania e zone adiacenti).",
+          "button": {
+            "text": "ROMS",
+            "href": "index.html?page=products&prod=rms3&place={place}&output=gen&date={date}"
+          }
+        }
+      }
+    },
+    {
+      "_id": "wcm3_gen",
+      "active":true,
+      "order": 60,
+      "avail": "https://api.meteo.uniparthenope.it/products/wcm3/{place}/avail?date={date}",
+      "i18n": {
+        "en-US": {
+          "image": {
+            "src":"https://api.meteo.uniparthenope.it/products/wcm3/forecast/{place}/plot/image?output=gen&date={date}",
+            "alt": "Inert tracers transport and diffusion"
+          },
+          "title": "Inert tracer transport and diffusion",
+          "text": "Forecast: 144 hours (6 days).<br/>Resolution: 160m (Campania Region coasts and related boundaries)",
+          "button": {
+            "text": "WaComM",
+            "href": "index.html?page=products&prod=wcm3&place={place}&output=gen&date={date}"
+          }
+        },
+        "it-IT": {
+          "image": {
+            "src":"https://api.meteo.uniparthenope.it/products/wcm3/forecast/{place}/plot/image?output=gen&date={date}",
+            "alt": "Trasporto e diffudsione di traccianti inerti."
+          },
+          "title": "Trasporto e diffudsione di traccianti inerti.",
+          "text": "Previsione: 144 ore (6 giorni).<br/>Risoluzione: 160m (Area costiera della Regione Campania e zone adiacenti).",
+          "button": {
+            "text": "WaComM",
+            "href": "index.html?page=products&prod=wcm3&place={place}&output=gen&date={date}"
+          }
+        }
+      }
+    },
+    {
+      "_id": "vmi",
+      "active":true,
+      "order": 70,
+      "i18n": {
+        "en-US": {
+          "image": {
+            "src":"https://www.radarmeteo.uniparthenope.it/data/prova.png?{random}",
+            "alt": "Vertical Maximum Intensity (VMI)",
+            "timeout": 300
+          },
+          "title": "Weather Radar",
+          "text": "Vertical Maximum Intensity (VMI)",
+          "button": {
+            "text": "Go to website...",
+            "href": "https://www.radarmeteo.uniparthenope.it/real-time-data.html"
+          }
+        },
+        "it-IT": {
+          "image": {
+            "src":"https://www.radarmeteo.uniparthenope.it/data/prova.png?{random}",
+            "alt": "Vertical Maximum Intensity (VMI)",
+            "timeout": 300
+          },
+          "title": "Radar Meteo",
+          "text": "Vertical Maximum Intensity (VMI)",
+          "button": {
+            "text": "Vai al portale...",
+            "href": "https://www.radarmeteo.uniparthenope.it/real-time-data.html"
+          }
+        }
+      }
+    },
+    {
+      "_id": "poh",
+      "active":true,
+      "order": 80,
+      "i18n": {
+        "en-US": {
+          "image": {
+            "src":"https://www.radarmeteo.uniparthenope.it/data/hail.png?{random}",
+            "alt": "Probability of Hail (POH)",
+            "timeout": 300
+          },
+          "title": "Weather Radar",
+          "text": "Probability of Hail (POH)",
+          "button": {
+            "text": "Vai al portale...",
+            "href": "https://www.radarmeteo.uniparthenope.it/thunderstorm-monitoring.html"
+          }
+        },
+        "it-IT": {
+          "image": {
+            "src":"https://www.radarmeteo.uniparthenope.it/data/hail.png?{random}",
+            "alt": "Probabilit&agrave; di Grandine (POH)",
+            "timeout": 300
+          },
+          "title": "Weather Radar",
+          "text": "robabilit&agrave; di Grandine (POH)",
+          "button": {
+            "text": "Vai al portale...",
+            "href": "https://www.radarmeteo.uniparthenope.it/thunderstorm-monitoring.html"
+          }
+        }
+      }
+    },
+    {
+      "_id": "infrastructure",
+      "active":true,
+      "order": 90,
+      "i18n": {
+        "en-US": {
+          "image": {
+            "src":"http://blackjeans.uniparthenope.it/ganglia/stacked.php?m=load_one&c=Blackjeans-UniParthenope&r=hour",
+            "alt": "HPC-GPU BlackJeans Stacked Computing Load Graph (last hour)",
+            "timeout": 60
+          },
+          "title": "HPC-GPU BlackJeans Stacked Computing Load Graph",
+          "text": "The Centre for Monitoring and Modelling Marine and Atmosphere (CMMMA) meteo@uniparthenope leverages on a dedicated HPC infrastructure devoted to handle sampled data and the models&apos; workflow.",
+          "button": {
+            "text": "Read more....",
+            "href": "index.html?page=infrastructure"
+          }
+        },
+        "it-IT": {
+          "image": {
+            "src":"http://blackjeans.uniparthenope.it/ganglia/stacked.php?m=load_one&c=Blackjeans-UniParthenope&r=hour",
+            "alt": "HPC-GPU BlackJeans Stacked Computing Load Graph (Ultima ora)",
+            "timeout": 60
+          },
+          "title": "HPC-GPU BlackJeans Stacked Computing Load Graph",
+          "text": "Il Centro per il Monitoraggio e la Modellistica Atmosferica (CMMMA) meteo@uniparthenope si avvale di un&apos;infrastruttura HPC dedicata destinata alla gestione dei dati acquisiti e dell&apos;esecuzione della catena modellistica.",
+          "button": {
+            "text": "Leggi....",
+            "href": "index.html?page=infrastructure"
+          }
+        }
+      }
+    }
+  ],
+  "carousel": [
+    {
+      "active":false,
+      "order": 10,
+      "i18n": {
+        "en-US": {
+          "image": {
+            "src":"https://meteo.uniparthenope.it/sites/default/files/styles/style_sli/public/2016-03/napoli01.png",
+            "alt": "",
+            "timeout": 60
+          },
+          "href": ""
+        },
+        "it-IT": {
+
+        }
+      }
+    },
+    {
+      "active":false,
+      "order": 20,
+      "i18n": {
+        "en-US": {
+          "image": {
+            "src":"https://meteo.uniparthenope.it/sites/default/files/styles/style_sli/public/2016-03/Lorem-Ipsum_2-14-13.jpg",
+            "alt":{ "en":"", "it":""},
+            "timeout": 60
+          },
+          "href": ""
+        },
+        "it-IT": {
+
+        }
+      }
+    },
+    {
+      "active":false,
+      "order": 30,
+      "i18n": {
+        "en-US": {
+          "image": {
+            "src":"https://meteo.uniparthenope.it/sites/default/files/styles/style_sli/public/2016-03/Lorem-ipsum-portland-marketing.jpg",
+            "alt":{ "en":"", "it":""},
+            "timeout": 60
+          },
+          "href": ""
+        },
+        "it-IT": {
+
+        }
+      }
+    },
+    {
+      "active":false,
+      "order": 40,
+      "i18n": {
+        "en-US": {
+          "image": {
+            "src":"https://meteo.uniparthenope.it/sites/default/files/styles/style_sli/public/2016-03/loremipsumtext.jpg",
+            "alt":{ "en":"", "it":""},
+            "timeout": 60
+          },
+          "href": ""
+        },
+        "it-IT": {
+
+        }
+      }
+    }
+  ]
+}

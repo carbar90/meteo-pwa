@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meteo Uniparthenope</title>
+    <link rel="stylesheet" href="css/jquery-ui.css"/>
+    <link rel="stylesheet" href="css/jquery-ui-timepicker-addon.min.css"/>
+    <link rel="stylesheet" href="css/meteo-uniparthenope.css"/>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui-1.12.1.js"></script>
+    <script src="js/jquery-ui-sliderAccess.js"></script>
+    <script src="js/jquery-ui-timepicker-addon.min.js"></script>
+    <script>
+        let jQueryProtect = jQuery;
+    </script>
+    <script src="js/meteo-uniparthenope.js"></script>
+    <style>
+        .ui-autocomplete-loading {
+            background: white url("images/ui-anim_basic_16x16.gif") right center no-repeat;
+        }
+
+        /* 1em @ 48em (768px) increasing to 2em @ 120em (1920px) https://websemantics.uk/articles/responsive-fonts/ */
+        @media (min-width: 48rem) {
+            :root {
+                font-size: calc(1rem + ((1vw - .48rem) * 1.389));
+                /* .48rem = viewportWidthMinimum /100 */
+                /* 1.389rem = 100 * fontSizeDifference / viewportWidthDifference */
+            }
+        }
+
+        @media (min-width: 120em) {
+            :root {
+                font-size: 2rem;
+            }
+        }
+
+        .very-specific-design {
+            width: 1024px;
+            height: 1024px;
+            padding: 0px;
+            text-align: center;
+            background: white;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transform-origin: center center;
+        }
+
+        .scaleable-wrapper {
+            padding: 0px;
+            resize: both;
+            position: relative;
+            background: white;
+            height: 100vh;
+            width: 100vw;
+        }
+
+    </style>
+</head>
+<body>
+<div class="scaleable-wrapper" id="scaleable-wrapper">
+
+    <div class="very-specific-design" id="very-specific-design">
+
+        <img src="http://radar2mari.hostingerapp.com/prova.png"/>
+
+    </div>
+
+</div>
+
+
+
+<script>
+    var $el = $("#very-specific-design");
+    var elHeight = $el.outerHeight();
+    var elWidth = $el.outerWidth();
+
+    var $wrapper = $("#scaleable-wrapper");
+
+
+
+    function doResize(event, ui) {
+
+        var scale, origin;
+
+        scale = Math.min(
+            ui.size.width / elWidth,
+            ui.size.height / elHeight
+        );
+
+        $el.css({
+            transform: "translate(-50%, -50%) " + "scale(" + scale + ")"
+        });
+
+    }
+
+    var starterData = {
+        size: {
+            width: $wrapper.width(),
+            height: $wrapper.height()
+        }
+    }
+    doResize(null, starterData);
+
+    function getURLParameter(sParam, defaultValue) {
+
+        var sPageURL = window.location.search.substring(1);
+
+        var sURLVariables = sPageURL.split('&');
+
+        for (var i = 0; i < sURLVariables.length; i++) {
+            var sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] == sParam) {
+                return sParameterName[1];
+            }
+        }
+        return defaultValue;
+    }
+
+
+
+</script>
+</body>
+</html>

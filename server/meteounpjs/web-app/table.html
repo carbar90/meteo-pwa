@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meteo Uniparthenope</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <link rel="stylesheet" href="css/jquery-ui-timepicker-addon.min.css"/>
+    <link rel="stylesheet" href="css/meteo-uniparthenope.css"/>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/jquery-ui-sliderAccess.js"></script>
+    <script src="js/jquery-ui-timepicker-addon.min.js"></script>
+    <script src="js/canvasjs.min.js"></script>
+    <script>
+        let jQueryProtect = jQuery;
+    </script>
+    <script src="js/meteo-uniparthenope.js"></script>
+    <style>
+        .ui-autocomplete-loading {
+            background: white url("images/ui-anim_basic_16x16.gif") right center no-repeat;
+        }
+    </style>
+</head>
+<!--
+Dependencies:
+https://github.com/trentrichardson/jQuery-Timepicker-Addon
+-->
+<body>
+
+
+  <div id="control"></div>
+
+    <table>
+        <tr>
+            <td valign="top" width="60%">
+                <div id="titolo1"></div>
+                <div id="chart"></div>
+            </td>
+            <td valign="top" width="40%">
+                <div id="titolo2"></div>
+                <div id="box"  ></div>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <!--
+        <tr>
+            <td></td>
+            <td>
+                <img id="topBarImage"/>
+            </td>
+            <td></td>
+        </tr>
+        -->
+        <tr>
+            <td width="64px" align="right"><img id="leftBarImage" width="64px"/></td>
+            <td><div id="plot"></div></td>
+            <td width="64px" align="left"><img id="rightBarImage" width="64px"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <img id="bottomBarImage"/></td>
+            <td>
+
+            </td>
+        </tr>
+    </table>
+
+
+    <script >
+
+        let control=null;
+        let chart=null;
+        let plot=null;
+        let box=null;
+
+        let _prod="wrf5";
+        let _output="gen";
+        let _place="com63049";
+        let _ncepDate=null;
+        let _step=1;
+        let _hours=0;
+
+        $( document ).ready(function() {
+            console.log("ready!");
+
+            box=$("#box").MeteoUniparthenopeDayBox(_place,_prod,"#titolo1");
+            chart=$("#chart").MeteoUniparthenopeChart(_place,_prod,_output,_hours,_step,null,$("#titolo2"));
+            plot=$("#plot").MeteoUniparthenopePlot(_place,_prod,_output,_ncepDate,
+                "topBarImage",
+                "leftBarImage",
+                "rightBarImage",
+                "bottomBarImage");
+            control=$("#control").MeteoUniparthenopeControl(_place,_prod,_output,_ncepDate);
+            control.on( "update", function( event, place, prod, output, ncepDate ) {
+                console.log( place );
+                console.log( prod );
+                console.log( output );
+                console.log( ncepDate );
+
+                plot.update(place,prod,output,ncepDate);
+                if (place !== _place) {
+                    box=$("#box").MeteoUniparthenopeDayBox(place,prod,"#titolo1");
+                    chart=$("#chart").MeteoUniparthenopeChart(place,prod,output,_hours,_step,null,$("#titolo2"));
+                }
+                else if (prod!==_prod || output !== _output) {
+                    chart=$("#chart").MeteoUniparthenopeChart(place,prod,output,_hours,_step,null,$("#titolo2"));
+                }
+
+                _prod=prod;
+                _place=place;
+                _output=output;
+                _ncepDate=ncepDate;
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>

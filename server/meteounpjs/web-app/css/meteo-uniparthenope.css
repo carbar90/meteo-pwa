@@ -1,0 +1,32 @@
+
+
+img{border:0;}
+.box{
+    background-color:#FFFFFF;
+    margin:0 auto;
+    font-family:Helvatica, sans-serif;
+    font-size:1rem;
+    color:#145592;
+}
+.title{
+    color:#FFFFFF;
+    background:#145592;
+    font-weight:bold;
+    font-size:3rem;
+    text-align:left;
+    padding:3px 0 3px 10px;
+}
+
+.ccmmmaLink{text-align:center; padding:3px 0; font-size:10px !important;}
+.ccmmmaLink a, .meteo.ink b{font-size:10px !important;}
+
+tr.legenda{font-weight:bold; font-size:1.5rem;}
+td.data{background-color:#F0F0F0; font-size:1rem; border-bottom:1px solid #c0c0c0;}
+.tMin{color:#1773C2; text-align:center;}
+.tMax{color:#C00000; text-align:center;}
+
+.weathericon {
+    width:1.5rem;
+    height:1.5rem;
+}
+
